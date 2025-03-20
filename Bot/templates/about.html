@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<nav class="about-navbar bg-body-secondary">
+    <div class="container-fluid1">
+        <a class="navbar-brand about-navbar-brand">About Magnus</a>
+    </div>
+</nav>
+
+<!-- About Page Content -->
+<div class="about-page-container">
+    <div class="about-card">
+        <h1 class="about-heading">Meet Magnus</h1>
+        <p class="about-description">
+            Magnus is a powerful rule-based chatbot designed to provide accurate, reliable, and efficient assistance. 
+            Whether you're here for information, support, or a simple question, Magnus is here to help. With its intuitive rule-based design, Magnus is a consistent and reliable virtual assistant.
+        </p>
+        
+        <div class="about-highlights">
+            <h2 class="about-subheading">Why Choose Magnus?</h2>
+            <ul class="about-list">
+                <li class="about-list-item">Highly Accurate Responses</li>
+                <li class="about-list-item">Rule-Based Decision Making</li>
+                <li class="about-list-item">Efficient and Reliable</li>
+                <li class="about-list-item">Designed for a Great User Experience</li>
+            </ul>
+        </div>
+        
+        <p class="about-footer">
+            Ready to experience Magnus? Start chatting today!
+        </p><br>
+        <h5><a href="{% url 'home' %}">Click here to Chat</a></h5>
+    </div>
+</div>
+{% endblock content %}
+

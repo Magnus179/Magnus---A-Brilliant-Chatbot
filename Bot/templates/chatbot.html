@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="chatbot-container">
+        <h1>
+        Magnus- a Brilliant Bot</h1>
+        <form method="POST" class="home-form">
+            {% csrf_token %}
+            <label for="question">Ask a question:</label><br>
+            <input type="text" id="question" name="question" required><br><br>
+            <button type="submit" class="home-submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2 5-5z"/> 
+                </svg>
+            </button>
+        </form>
+
+        {% if question %}
+            <h2>Your Question:</h2>
+            <p class="para">{{ question }}</p>
+            <h2>Answer:</h2>
+            <p class="para">{{ answer }}</p>
+        {% elif error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+{% endblock content %}
+   

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+  <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, rgb(240, 248, 255), rgb(200, 220, 240));
+    }
+    
+    form {
+        background-color: rgb(255, 255, 255);
+        padding: 25px 35px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 320px;
+        text-align: center;
+    }
+    
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: rgb(30, 30, 30);
+        text-align: left;
+    }
+    
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    form button {
+        background-color: rgb(30, 30, 30);
+        color: rgb(240, 248, 255);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    form button:hover {
+        background-color: rgb(50, 50, 50);
+    }
+    
+    form button:active {
+        background-color: rgb(20, 20, 20);
+    }
+    
+    form input:focus {
+        border-color: rgb(30, 30, 30);
+        outline: none;
+        box-shadow: 0 0 5px rgba(30, 30, 30, 0.5);
+    }
+    #b-button-head .b-button{
+        border: 2px solid black;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+    }
+  </style>
+    
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Your Name">
+        <label for="password">Password</label>
+        <input type="text" name="Password" id="password" placeholder="Enter Your Password">
+        <button type="submit">Submit</button><br><br>
+        <div id="b-button-head">
+            <a href="{% url 'register' %}" class="b-button">Back</a>
+        </div>
+        <h5>Dont have an account ? <br>
+        Try Registering here <a href="{% url 'register' %}">Sign Up</a></h5>
+    </form>
+</body>
+</html>

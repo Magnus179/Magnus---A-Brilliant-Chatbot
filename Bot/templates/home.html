@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-container">
+    <h1 class="home-heading">Welcome to Magnus</h1>
+    <p class="home-subheading">Your friendly and efficient rule-based chatbot.</p>
+    <a href="{% url 'chatbot' %}" class="home-button">Try Now</a>
+</div>
+
+{% endblock content %}

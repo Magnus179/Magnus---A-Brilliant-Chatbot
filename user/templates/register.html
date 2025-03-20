@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        /* Unique and beautiful form styles */
+#custom-user-form {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff, #f0f4ff);
+    font-family: 'Arial', sans-serif;
+}
+
+#custom-user-form h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.unique-input-group {
+    margin-bottom: 20px;
+}
+
+.unique-input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+    font-size: 14px;
+}
+
+.unique-input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.unique-input-group input:focus {
+    border-color: #7a93ff;
+    box-shadow: 0 0 5px rgba(122, 147, 255, 0.5);
+}
+
+#custom-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4a69ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#custom-submit-btn:hover {
+    background-color: #3342cc;
+}
+
+#custom-login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #4a69ff;
+}
+
+#custom-login-link a {
+    color: #4a69ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#custom-login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Success and error message styles */
+#custom-messages {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.custom-message {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.custom-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.custom-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Unique and beautiful submit button styles */
+#custom-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4a69ff, #3342cc);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#custom-submit-btn:hover {
+    background: linear-gradient(135deg, #3342cc, #4a69ff);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+#custom-submit-btn:active {
+    background: #26307a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <form method="post" id="custom-user-form">
+        {% csrf_token %}
+    
+        <!-- Username Field -->
+        <div class="unique-input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <!-- Password Field -->
+        <div class="unique-input-group">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" placeholder="Enter your password">
+            {% if form.password1.errors %}
+                <div class="error-message">{{ form.password1.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <!-- Confirm Password Field -->
+        <div class="unique-input-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="password2" name="password2" placeholder="Confirm your password">
+            {% if form.password2.errors %}
+                <div class="error-message">{{ form.password2.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <!-- Email Field -->
+        <div class="unique-input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <button id="custom-submit-btn" type="submit">Register</button>
+        <h5>Already a user ? click here to <a href="{% url 'login' %}">Login</a></h5>
+
+    </form>
+    {% if messages %}
+    <div id="custom-messages">
+        {% for message in messages %}
+            <div class="custom-message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</body>
+</html>

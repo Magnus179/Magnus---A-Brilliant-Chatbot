@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    background-color: #0c1a37; /* Matches the dark blue background tone */
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, #1a2a4f, #283d6b); /* Futuristic gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    border: none; /* Removed the border for a cleaner look */
+}
+
+.container-fluid {
+    margin-left: 0%;
+    width: 50%;
+}
+
+.nav-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 50px;
+    width: 40%;
+}
+
+.nav-link {
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Light transparent border */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); /* Slight background for a futuristic feel */
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.3); /* Lighten the background on hover */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Highlight the border */
+    color: #ffcc00; /* Bright yellow hover effect to mimic glowing accents */
+    box-shadow: 0 0 10px #ffcc00; /* Glow effect on hover */
+}
+
+.navbar .nav-search .nav-link {
+    margin-left: 10px; /* Added some spacing between the right links */
+}
+
+.navbar .nav-search {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+

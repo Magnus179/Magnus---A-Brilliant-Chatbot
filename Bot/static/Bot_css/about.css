@@ -1,0 +1,124 @@
+/* General Body Styling */
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    background-color: #eef2f5;
+}
+
+/* Navbar Styling */
+.about-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: #35495e;
+    color: #fff;
+    padding: 15px;
+}
+
+.about-navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* About Page Container */
+.about-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* To prevent overlap with navbar */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* About Card */
+.about-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading and Description */
+.about-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #35495e;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Highlights Section */
+.about-highlights {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.about-subheading {
+    font-size: 20px;
+    color: #35495e;
+    margin-bottom: 10px;
+}
+
+.about-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-list-item {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+    position: relative;
+    padding-left: 20px;
+}
+
+.about-list-item::before {
+    content: "✔";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Footer Section */
+.about-footer {
+    font-size: 14px;
+    color: #777;
+    margin-top: 20px;
+}
+h5 a {
+    display: inline-block; 
+    border: 2px solid rgb(157, 157, 249);
+    background-color: rgb(157, 157, 249); 
+    text-decoration: none; 
+    color: #fff;
+    border-radius: 5px; 
+    padding: 8px 16px; 
+    font-size: 16px; 
+    font-weight: 500; 
+    transition: all 0.3s ease; 
+    margin-right: auto;
+}
+
+h5 a:hover {
+    background-color: #6366f1; 
+    border-color: #6366f1; 
+    color: #fff; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
